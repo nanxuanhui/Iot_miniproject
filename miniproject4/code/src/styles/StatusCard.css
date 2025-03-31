@@ -1,0 +1,106 @@
+.status-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.status-item:hover {
+  background: #f0f2f5;
+}
+
+.status-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.temperature-icon {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+}
+
+.humidity-icon {
+  background: linear-gradient(135deg, #4a90e2, #67b26f);
+}
+
+.status-info {
+  flex: 1;
+}
+
+.status-label {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.status-value {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.status-trend {
+  font-size: 0.9rem;
+}
+
+.trend-up {
+  color: #e74c3c;
+}
+
+.trend-down {
+  color: #3498db;
+}
+
+.trend-normal {
+  color: #2ecc71;
+}
+
+.status-footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.last-update {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .status-item {
+    padding: 15px;
+  }
+  
+  .status-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .status-value {
+    font-size: 1.8rem;
+  }
+} 

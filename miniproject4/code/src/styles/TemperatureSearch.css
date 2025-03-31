@@ -1,0 +1,430 @@
+.temperature-search-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.page-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background-color: #f8f9fa;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.back-button:hover {
+    background-color: #edf2f7;
+    color: #2d3748;
+    transform: translateX(-2px);
+}
+
+.search-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #a0aec0;
+}
+
+.search-button {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 48px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.2);
+}
+
+.search-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0b5ed7, #084298);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+.search-button:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.error-message {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: #fff5f5;
+    color: #dc3545;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    border-left: 4px solid #dc3545;
+}
+
+.results-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.results-container h3 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.results-summary {
+    margin-bottom: 2rem;
+    color: #4a5568;
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem;
+    background-color: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.results-table {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 0;
+}
+
+th, td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2d3748;
+    white-space: nowrap;
+}
+
+td {
+    color: #4a5568;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f8f9ff;
+}
+
+/* 添加表格的圆角 */
+thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .temperature-search-page {
+        padding: 1rem;
+    }
+
+    .page-header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .back-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-container {
+        padding: 1.5rem;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .results-container {
+        padding: 1.5rem;
+    }
+
+    .results-table {
+        margin: 0 -1.5rem;
+        width: calc(100% + 3rem);
+    }
+
+    th, td {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Dashboard Temperature Search Styles */
+.dashboard-temperature-search {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-temperature-search h3 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.dashboard-search-form {
+    margin-bottom: 1rem;
+}
+
+.dashboard-search-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.dashboard-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dashboard-input-group label {
+    color: #4a5568;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.dashboard-input-group input,
+.dashboard-input-group select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.dashboard-input-group input:focus,
+.dashboard-input-group select:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.1);
+}
+
+.dashboard-input-group input::placeholder {
+    color: #a0aec0;
+}
+
+.dashboard-button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dashboard-search-button,
+.dashboard-clear-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 36px;
+    white-space: nowrap;
+}
+
+.dashboard-search-button {
+    background-color: #0d6efd;
+    color: white;
+    flex: 1;
+}
+
+.dashboard-search-button:hover:not(:disabled) {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+.dashboard-search-button:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+.dashboard-clear-button {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 0 0.75rem;
+}
+
+.dashboard-clear-button:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-1px);
+}
+
+.dashboard-search-error {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: #fff5f5;
+    color: #dc3545;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border-left: 3px solid #dc3545;
+}
+
+.dashboard-search-info {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #f8f9ff;
+    border-radius: 6px;
+    color: #2d3748;
+    font-size: 0.9rem;
+}
+
+.dashboard-search-details {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dashboard-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.dashboard-detail-label {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.dashboard-detail-value {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.dashboard-detail-time {
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .dashboard-temperature-search {
+        padding: 1rem;
+    }
+
+    .dashboard-search-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-button-group {
+        flex-direction: column;
+    }
+
+    .dashboard-search-button,
+    .dashboard-clear-button {
+        width: 100%;
+    }
+} 
